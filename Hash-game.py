@@ -27,7 +27,7 @@ def imprimeMenuPrincipal():
     print("PvE - modoFacil")
 
 
-def leiaCoordenadaLinha()
+def leiaCoordenadaLinha():
     linha = input("Digite a linha que deseja saber as coordenadas.")
     print("Digite no seguinte formato: linha X \nCom \"X\" sendo o número da linha")
     match linha:
@@ -69,6 +69,34 @@ def posicaoValida(tabuleiro, linha, coluna):
         return False
 
 def verificaLinha(tabuleiro):
+    i = 0
     for linha in tabuleiro:
-        if linha[0] == linha[1] == linha[2]:
-            return linha
+        if (linha[0] == linha[1] and linha[1] == linha[2]) and (linha[0] == "X" or linha[0] == "O"):
+            return i
+        else:
+            return False
+        i+=1
+
+def verificaColuna(tabuleiro):
+    j = 0
+    for linha in tabuleiro:
+        if (tabuleiro[0][j] == tabuleiro[1][j] and tabuleiro[1][j] == tabuleiro[2][j]) and (tabuleiro[0][j] == "X" or tabuleiro[0][j] == "O"):
+            return j
+        else:
+            return False
+        j+=1
+
+def verificaDiagonalR(tabuleiro):
+    for linha in tabuleiro:
+        if (tabuleiro[0][0] == tabuleiro[1][1] and tabuleiro[1][1] == tabuleiro[2][2]) and (
+                tabuleiro[0][0] == "X" or tabuleiro[0][0] == "O"):
+            return True
+        else:
+            return False
+
+def verificaDiagonalL(tabuleiro):
+    for linha in tabuleiro:
+        if (tabuleiro[0][2] == tabuleiro[1][1] and tabuleiro[1][1] == tabuleiro[2][0]) and (tabuleiro[1][1] == "X" or tabuleiro[1][1] == "O"):
+            return True
+        else:
+            return False
