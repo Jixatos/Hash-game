@@ -6,7 +6,7 @@ def inicializarTabuleiro():
         start = input("R:").lower()
         match start:
             case 's'| 'sim':
-                tabuleiro = [[], [], []]
+                tabuleiro = [["","",""], ["","",""], ["","",""]]
                 imprimeMenuPrincipal()
                 return tabuleiro
             case 'n' | 'nao' | 'não':
@@ -67,3 +67,8 @@ def posicaoValida(tabuleiro, linha, coluna):
         return True
     else:
         return False
+
+def verificaLinha(tabuleiro):
+    for linha in tabuleiro:
+        if linha[0] == linha[1] == linha[2]:
+            return linha
