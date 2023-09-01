@@ -1,3 +1,6 @@
+# RM551408 | Juan de Godoy
+# RM99708  | Gabriel Francisco Lobo
+
 import random
 
 def inicializarTabuleiro():
