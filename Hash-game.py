@@ -45,7 +45,7 @@ def jogar(tabuleiro, jogador):
     linha = leiaCoordenadaLinha()
     coluna = leiaCoordenadaColuna()
 
-    if tabuleiro[linha][coluna] == '':
+    if posicaoValida(tabuleiro, linha, coluna):
         tabuleiro[linha][coluna] = jogador
     else:
         print("Posição inválida. Tente novamente.")
